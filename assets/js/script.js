@@ -238,11 +238,11 @@ document.addEventListener("DOMContentLoaded", () => {
             desc: "Enter Room Number and Last Name for Internet access"
         },
         code: {
-            title: "Access Code",
+            title: "Code",
             desc: "Enter the Access Code for Internet access"
         },
         email: {
-            title: "Email Login",
+            title: "Email",
             desc: `Enter email address to receive <br> Verification link for Internet access`
         }
     };
@@ -278,7 +278,55 @@ document.addEventListener("DOMContentLoaded", () => {
     // Xử lý submit form
     document.getElementById("login-form").addEventListener("submit", (e) => {
         e.preventDefault();
-        // ... (giữ nguyên phần xử lý form submit)
+        document.getElementById("login-form").addEventListener("submit", (e) => {
+            e.preventDefault();
+        
+            let formData = new FormData();
+            let isValid = true;
+        
+            // Xử lý dữ liệu theo form active
+            if (activeForm === "guest") {
+                let room = document.getElementById("room").value.trim();
+                let lastName = document.getElementById("last-name").value.trim();
+                if (!room || !lastName) {
+                    isValid = false;
+                    alert("Please enter Room Number and Last Name.");
+                }
+                formData.append("room", room);
+                formData.append("last-name", lastName);
+            } 
+            else if (activeForm === "code") {
+                let accessCode = document.getElementById("access-code").value.trim();
+                if (!accessCode) {
+                    isValid = false;
+                    alert("Please enter Access Code.");
+                }
+                formData.append("access-code", accessCode);
+            } 
+            else if (activeForm === "email") {
+                let email = document.getElementById("email").value.trim();
+                if (!email || !validateEmail(email)) {
+                    isValid = false;
+                    alert("Please enter a valid Email Address.");
+                }
+                formData.append("email", email);
+            }
+        
+            if (!isValid) return;
+        
+            // Gửi dữ liệu bằng Fetch API
+            fetch("process.php", {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert("Response from server: " + data);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        });
     });
 });
 
