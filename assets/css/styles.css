@@ -70,7 +70,7 @@ body {
 }
 
 .logo-container img {
-    width: 80px; /* Điều chỉnh kích thước logo */
+    width: 150px; /* Điều chỉnh kích thước logo */
     height: auto;
 }
 .language-options {
@@ -420,7 +420,7 @@ button:hover {
         display: flex;
         justify-content: center;
         gap: 15px;
-        padding: 20px 0;
+        padding: 10px 0;
         order: 3; /* Đặt ở vị trí cuối cùng */
     }
     .content {
@@ -444,7 +444,7 @@ button:hover {
     }
 
     .logo-container img {
-        width: 60px;
+        width: 150px;
     }
 
     .content {
@@ -454,14 +454,14 @@ button:hover {
     .left-section, 
     .right-section {
         width: 100%;
-        padding: 15px;
+        padding: 0px 15px;
         text-align: center;
     }
 
     .left-section {
         border-right: none;
-        border-bottom: 2px solid #ff7f00;
-        padding-bottom: 20px;
+        border-bottom: none;
+    
     }
 
     .icons {
@@ -527,6 +527,17 @@ button:hover {
         box-shadow: none;
         min-height: 100vh;
     }
+    .header-content h2 {
+        margin-bottom: 5px;
+    }
+    .header-content p {
+        margin-bottom: 5px;
+    }
+    input {
+        
+        margin: 5px 0;
+        
+    }
 }
 
 /* Tablet: 769px - 992px */
@@ -552,7 +563,8 @@ button:hover {
 /* ... (giữ nguyên tất cả CSS gốc của bạn) ... */
 
 .desktop-header {
-    width: 100%;
+    /* width: 100%; */
+    width: 900px;
     height: 200px;
     object-fit: cover;
 }
