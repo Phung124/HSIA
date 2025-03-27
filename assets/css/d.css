@@ -1,0 +1,646 @@
+/* Thiết lập toàn bộ trang với nền mờ */
+body {
+    font-family: Arial, sans-serif;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("../images/background.jpg");
+}
+
+
+/* Khung chính */
+/* Định dạng phần container chính */
+.container {
+    position: relative;
+    width: 900px; /* Điều chỉnh kích thước theo ý muốn */
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Phần ảnh nền */
+.top-image {
+    width: 100%;
+    height: 200px; /* Điều chỉnh chiều cao theo thiết kế */
+    object-fit: cover;
+}
+
+/* Định dạng logo thả xuống */
+.logo-container {
+    position: absolute;
+    top: 0px; /* Điều chỉnh khoảng cách để logo chồng lên ảnh */
+    left: 15%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 5px;
+    border-radius:0px 0px 5px 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container img {
+    width: 80px; /* Điều chỉnh kích thước logo */
+    height: auto;
+}
+.language-options {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.language-options.show {
+    display: block;
+}
+
+
+/* Chia phần nội dung thành 2 cột */
+.content {
+    display: flex;
+    padding: 20px;
+}
+/* Định dạng nút quay lại */
+.logo {
+    top: 20px;
+    left: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Nút quay lại */
+.back-button {
+    top: calc(20px + 80px); /* Cách logo 20px */
+    left: 05px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e57e25;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    background: white;
+}
+
+/* Icon Font Awesome */
+.back-button i {
+    color: #e57e25;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+/* Hiệu ứng hover */
+.back-button:hover {
+    background: #e57e25;
+}
+
+.back-button:hover i {
+    color: white;
+}
+
+
+
+/* Cột bên trái */
+.left-section {
+    width: 30%;
+
+    padding: 20px;
+    text-align: right;
+    border-right: 2px solid #ff7f00;
+}
+
+.left-section .logo {
+    width: 80px;
+}
+
+.left-section .guest {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff7f00;
+}
+
+
+
+.icons {
+    display: flex;
+    gap: 8px; /* Khoảng cách giữa các icon */
+    justify-content: flex-end;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ff7f00; /* Viền màu cam */
+    border-radius: 8px; /* Bo góc */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.form-section {
+    display: none;
+}
+.form-section.active {
+    display: block;
+}
+
+.icon-box i {
+    font-size: 20px;
+    color: #ff7f00;
+}
+
+.icon-box.active,
+.icon-box:hover {
+    background-color: #ff7f00;
+}
+
+.icon-box.active i,
+.icon-box:hover i {
+    color: white; /* Khi chọn hoặc hover thì icon đổi màu trắng */
+}
+
+
+
+/* Cột bên phải */
+.right-section {
+    width: 70%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Định dạng lại Language Dropdown để nằm bên phải */
+.language-dropdown {
+    position: absolute;
+    top: 216px;
+    right: 20px;
+    text-align: right;
+}
+
+.language-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ff7f00;
+}
+
+.language-options {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 120px;
+}
+
+.language-options p {
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.language-options p:hover {
+    background: #ff7f00;
+    color: white;
+}
+
+
+/* Ô nhập liệu */
+input {
+    width: 50%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ff7f00;
+    border-radius: 5px;
+}
+input:hover{
+    border: 1px solid #ff7f00;
+}
+
+.verification-input {
+    width: 50%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ff7f00;
+    border-radius: 5px;
+    position: relative;
+}
+
+.get-code-btn {
+    width: 10%;
+    position: absolute;
+    background-color: orange;
+    color: white;
+    right: 162px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px 15px;
+    height: 48px; /* Điều chỉnh chiều cao bằng input */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff7f00;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+form button{
+    padding: 15px;
+    background-color: #ff7f00;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 24px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.submit{
+    width: 55%;
+}
+button:hover {
+    
+}
+
+.terms {
+    font-size: 12px;
+    margin-top: 10px;
+}
+.footer-text {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+    background: rgb(222 219 219 / 50%); /* Nền mờ nhẹ */
+    margin-top: 5px;
+}
+.footer-text p{
+    margin: 0px;
+    font-weight: 400;
+}
+/* Hiệu ứng mờ nền */
+/* .background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    z-index: -1;
+} */
+
+.bottom{
+        position: absolute;
+        bottom: 0px; /* Khoảng cách từ đáy */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        color: gray;
+        background: rgb(240 234 234 / 50%); /* Hiệu ứng nền mờ */
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-align: center;
+        width: max-content;
+        
+}
+.bottom::before {
+    content: "» ";
+    display: inline-block;
+    transform: rotate(-90deg); /* Xoay 90 độ để hướng lên */
+    font-size: 16px;
+    margin-right: 5px;
+}
+.terms-container {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 5px; /* Khoảng cách giữa icon và chữ */
+    position: absolute;
+    bottom: 0px; /* Khoảng cách từ đáy */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: gray;
+    background: rgba(231, 230, 230, 0.5); /* Hiệu ứng nền mờ */
+    padding: 0px 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: max-content;
+}
+
+.terms-icon {
+    display: inline-block;
+    transform: rotate(-90deg); /* Xoay dấu » lên trên */
+    font-size: 16px;
+}
+
+
+.bottom p{
+    margin: 0px;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+    <script defer src="assets/js/script.js"></script>
+  </head>
+  <body>
+    <!-- Lớp nền mờ phía sau -->
+    <div class="background-blur"></div>
+<div class="wp-container">
+    <div class="container">
+      <!-- Phần trên có hình ảnh -->
+      <img src="assets/images/background.jpg" class="top-image" alt="Background Image">
+
+      <!-- Logo thả xuống -->
+      <div class="logo-container">
+          <img src="assets/images/angsana-logo-56EAFFD0A9-seeklogo.com (1).png" alt="Logo">
+      </div>
+
+      <!-- Phần dưới chia làm 2 cột -->
+      <div class="content">
+        <!-- Cột bên trái -->
+        <div class="left-section">
+            <div class="back-button">
+                <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
+            </div>
+            
+            <div class="header-content">
+              <h2>Angsana Laguna Phuket</h2>
+              <p id="form-title" class="guest">Guest</p>
+              <p id="form-description">Enter Room Number and Last Name for Internet access</p>
+          </div>
+          <div class="icons">
+            <div class="icon-box active">
+                <i class="fa-solid fa-user-check"></i>
+            </div>
+            <div class="icon-box">
+                <i class="fa-solid fa-address-card"></i>
+            </div>
+            <div class="icon-box">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+        </div>
+        
+        </div>
+
+        <!-- Cột bên phải -->
+        <div class="right-section">
+          <!-- Language Dropdown -->
+          <!-- Language Dropdown nằm trên góc phải -->
+          <div class="language-dropdown">
+            <button class="language-btn" onclick="toggleDropdown()">
+              Language ▼
+            </button>
+            <div class="language-options" id="language-options">
+              <p onclick="changeLanguage('English')">English</p>
+              <p onclick="changeLanguage('Vietnamese')">Tiếng Việt</p>
+              <p onclick="changeLanguage('Thai')">ภาษาไทย</p>
+            </div>
+          </div>
+
+         
+          <form id="login-form" action="process.php" method="POST">
+            <!-- Các form đăng nhập -->
+            <div class="form-section active" id="guest-form">
+                <input type="text" name="room" id="room" placeholder="Room Number" required />
+                <input type="text" name="last-name" id="last-name" placeholder="Last Name" required />
+            </div>
+        
+            <div class="form-section" id="code-form">
+                <input type="text" name="access-code" id="access-code" placeholder="Access Code" required />
+            </div>
+        
+            <div class="form-section" id="email-form">
+                <input type="email" name="email" id="email" placeholder="Email Address" required />
+                <input type="text" name="guest-name" id="guest-name" placeholder="Guest Name" required />
+                
+             
+                  <input type="text" class="verification-input" placeholder="Verification Code">
+                  <button class="get-code-btn">Get Code</button>
+      
+            </div>
+        
+            <p class="terms">
+                By clicking "Connect", you have read and agreed to the terms and conditions
+            </p>
+       
+            <button type="submit" class ="submit">Connect</button>
+        </form>
+        </div>
+        <div class="terms-container">
+          <span class="terms-icon">»</span>
+          <p>View the Terms and Conditions</p>
+      </div>
+      
+        
+      </div>
+
+    </div>
+      <div class="footer-text">
+      
+        <p>Powered by LinkBroad Technology</p>
+    </div>
+    </div>
+ 
+  </body>
+</html>
+
+
+// Hiển thị hoặc ẩn danh sách ngôn ngữ
+function toggleDropdown() {
+    let dropdown = document.getElementById("language-options");
+    dropdown.classList.toggle("show"); // Sử dụng class thay vì inline style
+}
+
+// Chọn ngôn ngữ và ẩn danh sách
+function changeLanguage(lang) {
+    document.querySelector(".language-btn").textContent = lang + " ▼";
+    document.getElementById("language-options").classList.remove("show");
+}
+
+// Đóng dropdown nếu nhấn ra ngoài
+document.addEventListener("click", function (event) {
+    let dropdown = document.getElementById("language-options");
+    let button = document.querySelector(".language-btn");
+
+    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.classList.remove("show");
+    }
+});
+
+//////////
+document.addEventListener("DOMContentLoaded", function () {
+    const icons = document.querySelectorAll(".icon-box");
+    const forms = {
+        guest: document.getElementById("guest-form"),
+        code: document.getElementById("code-form"),
+        email: document.getElementById("email-form"),
+    };
+    const titleElement = document.getElementById("form-title"); // Tiêu đề chính
+    const descElement = document.getElementById("form-description"); // Mô tả
+
+    const formData = {
+        guest: { title: "Guest", desc: "Enter Room Number and Last Name for Internet access" },
+        code: { title: "Access Code", desc: "Enter the Access Code for Internet access" },
+        email: { title: "Email Login", desc: `Enter email address to receive <br> Verification link for Internet access` },
+    };
+
+    let activeForm = "guest"; // Mặc định là form Guest
+
+    function showForm(formKey) {
+        Object.values(forms).forEach(form => form.classList.remove("active")); // Ẩn tất cả form
+        forms[formKey].classList.add("active"); // Hiển thị form cần chọn
+        activeForm = formKey;
+        
+        // Cập nhật tiêu đề và mô tả
+        titleElement.textContent = formData[formKey].title;
+        descElement.innerHTML = formData[formKey].desc; // Dùng innerHTML để xuống hàng
+    }
+    
+
+    icons.forEach((icon, index) => {
+        icon.addEventListener("click", function () {
+            icons.forEach(i => i.classList.remove("active"));
+            icon.classList.add("active");
+
+            if (index === 0) showForm("guest");
+            else if (index === 1) showForm("code");
+            else if (index === 2) showForm("email");
+        });
+    });
+
+    document.getElementById("login-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Ngăn form gửi đi mặc định
+
+        let formData = new FormData();
+        let isValid = true;
+
+        if (activeForm === "guest") {
+            let room = document.getElementById("room").value.trim();
+            let lastName = document.getElementById("last-name").value.trim();
+            if (!room || !lastName) {
+                isValid = false;
+                alert("Please enter Room Number and Last Name.");
+            }
+            formData.append("room", room);
+            formData.append("last-name", lastName);
+        } else if (activeForm === "code") {
+            let accessCode = document.getElementById("access-code").value.trim();
+            if (!accessCode) {
+                isValid = false;
+                alert("Please enter Access Code.");
+            }
+            formData.append("access-code", accessCode);
+        } else if (activeForm === "email") {
+            let email = document.getElementById("email").value.trim();
+            if (!email || !validateEmail(email)) {
+                isValid = false;
+                alert("Please enter a valid Email Address.");
+            }
+            formData.append("email", email);
+        }
+
+        if (!isValid) return; // Nếu dữ liệu không hợp lệ, không gửi form
+
+        fetch("process.php", {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert("Response from server: " + data);
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    });
+
+    // Hàm kiểm tra email hợp lệ
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+});
+
+// Xử lý toggle menu trên mobile
+function adjustLayout() {
+    const screenWidth = window.innerWidth;
+    const languageDropdown = document.querySelector('.language-dropdown');
+    
+    if(screenWidth < 768) {
+        // Thêm xử lý đặc biệt cho mobile
+        languageDropdown.style.position = 'relative';
+    } else {
+        languageDropdown.style.position = 'absolute';
+    }
+}
+
+// Gọi hàm khi load và resize
+window.addEventListener('load', adjustLayout);
+window.addEventListener('resize', adjustLayout);
+// Xử lý responsive layout
+function updateMobileLayout() {
+    const isMobile = window.innerWidth <= 768;
+    
+    // Ẩn các phần desktop
+    document.querySelectorAll('.mobile-hidden').forEach(el => {
+        el.style.display = isMobile ? 'none' : 'block';
+    });
+    
+    // Xử lý fixed navigation
+    const formSections = document.querySelectorAll('.form-section');
+    if(isMobile) {
+        document.body.classList.add('mobile-view');
+        formSections.forEach(form => form.style.paddingBottom = '120px');
+    } else {
+        document.body.classList.remove('mobile-view');
+    }
+}
+
+// Thêm event listeners
+window.addEventListener('resize', updateMobileLayout);
+window.addEventListener('DOMContentLoaded', updateMobileLayout);
+
+// Xử lý click icon
+document.querySelectorAll('.icon-box').forEach(icon => {
+    icon.addEventListener('click', function() {
+        // Logic chuyển đổi form
+        const targetForm = this.dataset.form;
+        document.querySelectorAll('.form-section').forEach(form => {
+            form.classList.remove('active');
+        });
+        document.getElementById(targetForm).classList.add('active');
+    });
+});

@@ -1,0 +1,542 @@
+/* Thiết lập toàn bộ trang với nền mờ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.mobile-header {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.mobile-icons{
+    display: none;
+}
+body {
+    font-family: Arial, sans-serif;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("../images/background.jpg");
+}
+.header-content{
+    margin-bottom: 10px;
+}
+
+/* Khung chính */
+/* Định dạng phần container chính */
+
+.container {
+    position: relative;
+    width: 100%; /* Luôn full width */
+    max-width: 900px; /* Giới hạn max width cho desktop */
+    margin: auto;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Phần ảnh nền */
+.top-image {
+    width: 100%;
+    height: 200px; /* Điều chỉnh chiều cao theo thiết kế */
+    object-fit: cover;
+}
+
+/* Định dạng logo thả xuống */
+.logo-container {
+    position: absolute;
+    top: 0px; /* Điều chỉnh khoảng cách để logo chồng lên ảnh */
+    left: 15%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 5px;
+    border-radius:0px 0px 5px 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container img {
+    width: 80px; /* Điều chỉnh kích thước logo */
+    height: auto;
+}
+.language-options {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.language-options.show {
+    display: block;
+}
+
+
+/* Chia phần nội dung thành 2 cột */
+.content {
+    display: flex;
+    padding: 20px;
+}
+/* Định dạng nút quay lại */
+.logo {
+    top: 20px;
+    left: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Nút quay lại */
+.back-button {
+    top: calc(20px + 80px); /* Cách logo 20px */
+    left: 05px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e57e25;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    background: white;
+}
+
+/* Icon Font Awesome */
+.back-button i {
+    color: #e57e25;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+/* Hiệu ứng hover */
+.back-button:hover {
+    background: #e57e25;
+}
+
+.back-button:hover i {
+    color: white;
+}
+
+
+
+/* Cột bên trái */
+.left-section {
+    width: 30%;
+
+    padding: 20px;
+    text-align: right;
+    border-right: 2px solid #ff7f00;
+}
+
+.left-section .logo {
+    width: 80px;
+}
+
+.left-section .guest {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff7f00;
+}
+
+
+
+.icons {
+    display: flex;
+    gap: 8px; /* Khoảng cách giữa các icon */
+    justify-content: flex-end;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ff7f00; /* Viền màu cam */
+    border-radius: 8px; /* Bo góc */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.form-section {
+    display: none;
+}
+.form-section.active {
+    display: block;
+}
+
+.icon-box i {
+    font-size: 20px;
+    color: #ff7f00;
+}
+
+.icon-box.active,
+.icon-box:hover {
+    background-color: #ff7f00;
+}
+
+.icon-box.active i,
+.icon-box:hover i {
+    color: white; /* Khi chọn hoặc hover thì icon đổi màu trắng */
+}
+
+
+
+/* Cột bên phải */
+.right-section {
+    width: 70%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Định dạng lại Language Dropdown để nằm bên phải */
+.language-dropdown {
+    position: absolute;
+    top: 216px;
+    right: 20px;
+    text-align: right;
+}
+
+.language-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ff7f00;
+}
+
+.language-options {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 120px;
+}
+
+.language-options p {
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.language-options p:hover {
+    background: #ff7f00;
+    color: white;
+}
+
+
+/* Ô nhập liệu */
+input {
+    width: 50%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ff7f00;
+    border-radius: 5px;
+}
+input:hover{
+    border: 1px solid #ff7f00;
+}
+
+.verification-input {
+    width: 50%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ff7f00;
+    border-radius: 5px;
+    position: relative;
+}
+
+.get-code-btn {
+    width: 10%;
+    position: absolute;
+    background-color: orange;
+    color: white;
+    right: 182px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px 15px;
+    height: 48px; /* Điều chỉnh chiều cao bằng input */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff7f00;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+form button{
+    padding: 15px;
+    background-color: #ff7f00;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 24px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.submit{
+    width: 55%;
+}
+button:hover {
+    
+}
+
+.terms {
+    font-size: 12px;
+    margin-top: 10px;
+}
+.footer-text {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+    background: rgb(222 219 219 / 50%); /* Nền mờ nhẹ */
+    margin-top: 5px;
+}
+.footer-text p{
+    margin: 0px;
+    font-weight: 400;
+}
+
+
+.bottom{
+        position: absolute;
+        bottom: 0px; /* Khoảng cách từ đáy */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        color: gray;
+        background: rgb(240 234 234 / 50%); /* Hiệu ứng nền mờ */
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-align: center;
+        width: max-content;
+        
+}
+.bottom::before {
+    content: "» ";
+    display: inline-block;
+    transform: rotate(-90deg); /* Xoay 90 độ để hướng lên */
+    font-size: 16px;
+    margin-right: 5px;
+}
+.terms-container {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 5px; /* Khoảng cách giữa icon và chữ */
+    position: absolute;
+    bottom: 0px; /* Khoảng cách từ đáy */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: gray;
+    background: rgba(231, 230, 230, 0.5); /* Hiệu ứng nền mờ */
+    padding: 0px 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: max-content;
+}
+
+.terms-icon {
+    display: inline-block;
+    transform: rotate(-90deg); /* Xoay dấu » lên trên */
+    font-size: 16px;
+}
+
+
+.bottom p{
+    margin: 0px;
+}
+/* Thêm phần responsive ở cuối file CSS */
+
+/* Mobile: <= 768px */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        padding: 0; /* Bỏ padding ở body */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background-image: none !important;
+        
+    }
+    .icon-box {
+        touch-action: manipulation; /* Tối ưu touch event */
+        pointer-events: auto !important; /* Đảm bảo click được */
+        z-index: 1000; /* Đảm bảo hiển thị trên cùng */
+        position: relative;
+    }
+    
+    .mobile-icons {
+        position: relative;
+        background: white;
+    }
+    body.mobile-view * {
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .left-section .icons {
+        display: none;
+    }
+    .mobile-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding: 20px 0;
+        order: 3; /* Đặt ở vị trí cuối cùng */
+    }
+    .content {
+        flex-direction: column;
+        padding-bottom: 60px; /* Tạo khoảng trống cho icons */
+    }
+
+    /* Thay ảnh top khi ở mobile */
+    .top-image {
+        content: url("../images/LandingPage.jpg");
+        height: 150px;
+        width: 100vw; /* Thêm dòng này */
+        margin-left: -20px; /* Bù trừ padding container */
+        margin-right: -20px; /* Bù trừ padding container */
+    }
+
+    .logo-container {
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 3px;
+    }
+
+    .logo-container img {
+        width: 60px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .left-section, 
+    .right-section {
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .left-section {
+        border-right: none;
+        border-bottom: 2px solid #ff7f00;
+        padding-bottom: 20px;
+    }
+
+    .icons {
+        justify-content: center;
+    }
+
+    .language-dropdown {
+        display: none;
+        top: 160px;
+        right: 10px;
+    }
+
+    input, 
+    .verification-input {
+        width: 80%;
+    }
+
+    .get-code-btn {
+        right: 16%;
+        width: 25%;
+    }
+
+    .submit {
+        width: 80%;
+    }
+
+    .back-button {
+        display: none;
+        top: 10px;
+        left: 10px;
+    }
+
+    .terms-container {
+        position: relative;
+        bottom: auto;
+        margin-top: 20px;
+    }
+    .desktop-header {
+        display: none; /* Ẩn ảnh desktop */
+    }
+    
+    .mobile-header {
+        display: block;
+        height: 50vh; /* Chiếm 40% chiều cao màn hình */
+        overflow: hidden; /* Tránh ảnh bị tràn */
+        object-fit: cover;
+    }
+
+    .mobile-header img {
+        width: 100%; /* Giữ nguyên chiều rộng */
+        height: auto; /* Giữ nguyên tỷ lệ ảnh */
+        object-fit: cover; /* Hiển thị toàn bộ ảnh mà không bị cắt */
+    }
+    
+    
+    .container {
+        width: 100vw; /* Full chiều ngang */
+        margin-left: calc(-50vw + 50%); /* Căn giữa khi container có max-width */
+        min-width: 100%;
+        
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        min-height: 100vh;
+    }
+}
+
+/* Tablet: 769px - 992px */
+@media (min-width: 769px) and (max-width: 992px) {
+    .container {
+        width: 90%;
+    }
+    
+    .left-section {
+        width: 35%;
+    }
+    
+    .right-section {
+        width: 65%;
+    }
+    .desktop-header {
+        height: 180px;
+    }
+}
+
+/* Các phần CSS gốc giữ nguyên */
+
+/* ... (giữ nguyên tất cả CSS gốc của bạn) ... */
+
+.desktop-header {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
