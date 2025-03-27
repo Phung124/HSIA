@@ -556,8 +556,22 @@ button:hover {
     .desktop-header {
         height: 180px;
     }
+    .get-code-btn {
+      
+        right: 156px;
+       
+    }
+  
 }
-
+@media (min-width:500px) and (max-width: 768px) {
+ 
+    .get-code-btn {
+      
+        right: 84px;
+       
+    }
+  
+}
 /* Các phần CSS gốc giữ nguyên */
 
 /* ... (giữ nguyên tất cả CSS gốc của bạn) ... */
