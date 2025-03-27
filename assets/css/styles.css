@@ -256,14 +256,11 @@ input {
     border: 1px solid #ff7f00;
     border-radius: 5px;
 }
-input:hover{
-    border: 1px solid #ff7f00;
-}
+
 input:focus{
     border: 1px solid #ff7f00;
     outline: none;
 }
-
 .verification-input {
     width: 50%;
     padding: 15px;
