@@ -272,7 +272,7 @@ input:focus{
 }
 .verification-input {
     width: 100%;
-    padding: 15px 80px 15px 15px;
+    padding: 15px 81px 15px 15px;
     margin: 10px 0;
     border: 1px solid #ff7f00;
     border-radius: 5px;
@@ -280,7 +280,7 @@ input:focus{
 }
 
 .get-code-btn {
-    width: 26%;
+    width: 30%;
     position: absolute;
     background-color: orange;
     color: white;
@@ -506,6 +506,9 @@ button:hover {
     .verification-wraper{
         width: 80%; 
     }
+    .get-code-btn{
+        width: 30%;
+    }
 }
 
 /* Tablet: 769px - 992px */
@@ -525,7 +528,7 @@ button:hover {
         height: 180px;
     }
   
-  
+    
 }
 
 /* Các phần CSS gốc giữ nguyên */
