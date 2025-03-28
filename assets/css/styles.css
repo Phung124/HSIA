@@ -253,7 +253,7 @@ body {
 
 /* Ô nhập liệu */
 input {
-    width: 50%;
+    width: 60%;
     padding: 15px;
     margin: 10px 0;
     border: 1px solid #ff7f00;
@@ -264,9 +264,15 @@ input:focus{
     border: 1px solid #ff7f00;
     outline: none;
 }
+.verification-wraper{
+    position: relative;
+    width: 60%;
+    /* align-items: center; */
+    margin: 0px auto;
+}
 .verification-input {
-    width: 50%;
-    padding: 15px;
+    width: 100%;
+    padding: 15px 80px 15px 15px;
     margin: 10px 0;
     border: 1px solid #ff7f00;
     border-radius: 5px;
@@ -274,18 +280,20 @@ input:focus{
 }
 
 .get-code-btn {
-    width: 10%;
+    width: 26%;
     position: absolute;
     background-color: orange;
     color: white;
-    right: 182px;
+    /* right: 132px; */
+    right: 0px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     font-size: 14px;
     padding: 10px 15px;
-    height: 48px; /* Điều chỉnh chiều cao bằng input */
-    display: inline-flex;
+    height: 48px;
+    display: inline-flex
+;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
@@ -324,70 +332,10 @@ button:hover {
     margin-top: 10px;
     color: #757575;
 }
-.footer-text {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    font-size: 12px;
-    color: gray;
-    background: rgb(222 219 219 / 50%); /* Nền mờ nhẹ */
-    margin-top: 5px;
-}
-.footer-text p{
-    margin: 0px;
-    font-weight: 400;
-}
 
 
-.bottom{
-        position: absolute;
-        bottom: 0px; /* Khoảng cách từ đáy */
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 12px;
-        color: gray;
-        background: rgb(240 234 234 / 50%); /* Hiệu ứng nền mờ */
-        padding: 5px 10px;
-        border-radius: 5px;
-        text-align: center;
-        width: max-content;
-        
-}
-.bottom::before {
-    content: "» ";
-    display: inline-block;
-    transform: rotate(-90deg); /* Xoay 90 độ để hướng lên */
-    font-size: 16px;
-    margin-right: 5px;
-}
-.terms-container {
-    display: flex;
-    align-items: center; /* Căn giữa theo chiều dọc */
-    gap: 5px; /* Khoảng cách giữa icon và chữ */
-    position: absolute;
-    bottom: 0px; /* Khoảng cách từ đáy */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 12px;
-    color: gray;
-    background: rgba(231, 230, 230, 0.5); /* Hiệu ứng nền mờ */
-    padding: 0px 10px;
-    border-radius: 5px;
-    text-align: center;
-    width: max-content;
-}
-
-.terms-icon {
-    display: inline-block;
-    transform: rotate(-90deg); /* Xoay dấu » lên trên */
-    font-size: 16px;
-}
 
 
-.bottom p{
-    margin: 0px;
-}
 /* Thêm phần responsive ở cuối file CSS */
 
 /* Mobile: <= 768px */
@@ -503,19 +451,6 @@ button:hover {
         z-index: 101;
     }
 
-    input, 
-    .verification-input {
-        width: 80%;
-    }
-
-    .get-code-btn {
-        right: 16%;
-        width: 25%;
-    }
-
-    .submit {
-        width: 80%;
-    }
 
     .back-button {
         display: none;
@@ -585,22 +520,10 @@ button:hover {
     .desktop-header {
         height: 180px;
     }
-    .get-code-btn {
-      
-        right: 156px;
-       
-    }
+  
   
 }
-@media (min-width:500px) and (max-width: 768px) {
- 
-    .get-code-btn {
-      
-        right: 84px;
-       
-    }
-  
-}
+
 /* Các phần CSS gốc giữ nguyên */
 
 /* ... (giữ nguyên tất cả CSS gốc của bạn) ... */

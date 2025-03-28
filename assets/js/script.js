@@ -111,6 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     alert("Please enter a valid Email Address.");
                 }
                 formData.append("email", email);
+                formData.append("guest-name", guestname);
+                formData.append("verification-input", verificationinput);
             }
         
             if (!isValid) return;
