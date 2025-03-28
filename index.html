@@ -16,6 +16,7 @@
     <div class="background-blur"></div>
 <div class="wp-container">
     <div class="container">
+      <div class="header">
       <!-- Phần trên có hình ảnh -->
       <img src="assets/images/background.jpg" alt="Desktop Header" class="desktop-header">
     
@@ -26,7 +27,17 @@
       <div class="logo-container">
           <img src="assets/images/Landing Page - Logo 397x134.png" alt="Logo">
       </div>
-
+    </div>
+    <div class="language-dropdown">
+      <button class="language-btn" onclick="toggleDropdown()">
+        Language ▼
+      </button>
+      <div class="language-options" id="language-options">
+        <p onclick="changeLanguage('English')">English</p>
+        <p onclick="changeLanguage('Vietnamese')">Tiếng Việt</p>
+        <p onclick="changeLanguage('Thai')">ภาษาไทย</p>
+      </div>
+    </div>
       <!-- Phần dưới chia làm 2 cột -->
       <div class="content">
         <!-- Cột bên trái -->
@@ -58,16 +69,7 @@
         <div class="right-section">
           <!-- Language Dropdown -->
           <!-- Language Dropdown nằm trên góc phải -->
-          <div class="language-dropdown">
-            <button class="language-btn" onclick="toggleDropdown()">
-              Language ▼
-            </button>
-            <div class="language-options" id="language-options">
-              <p onclick="changeLanguage('English')">English</p>
-              <p onclick="changeLanguage('Vietnamese')">Tiếng Việt</p>
-              <p onclick="changeLanguage('Thai')">ภาษาไทย</p>
-            </div>
-          </div>
+          
 
          
           <form id="login-form" action="process.php" method="POST">

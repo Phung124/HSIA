@@ -13,6 +13,9 @@
 .mobile-icons{
     display: none;
 }
+.header {
+    position: relative;
+}
 body {
     font-family: serif;
     backdrop-filter: blur(10px);
@@ -211,9 +214,9 @@ body {
 /* Định dạng lại Language Dropdown để nằm bên phải */
 .language-dropdown {
     position: absolute;
-    top: 216px;
+    top: 200px;
     right: 20px;
-    text-align: right;
+    z-index: 100;
 }
 
 .language-btn {
@@ -468,10 +471,33 @@ button:hover {
         justify-content: center;
     }
 
+
+
     .language-dropdown {
-       
-        top: 321px;
-        right: 10px;
+        position: absolute;
+        order: 2; /* Đặt dưới ảnh header */
+        top: auto !important;
+        right: 0px !important;
+        margin: 0 20px;
+        text-align: center;
+    }
+
+    .desktop-header {
+        display: none;
+    }
+
+    .mobile-header {
+        display: block;
+        width: 100%;
+        height: auto;
+        order: 1; /* Ảnh header ở trên cùng */
+    }
+
+    .logo-container {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 20px;
+        z-index: 101;
     }
 
     input, 
