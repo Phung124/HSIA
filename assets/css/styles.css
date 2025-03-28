@@ -482,7 +482,7 @@ button:hover {
         text-align: center;
     }
     .language-dropdown button{
-      padding-right: 0px;
+      padding-right: 3px;
     }
 
     .desktop-header {
