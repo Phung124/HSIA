@@ -481,6 +481,9 @@ button:hover {
         margin: 0 0px 0px 5px;
         text-align: center;
     }
+    .language-dropdown button{
+      padding-right: 0px;
+    }
 
     .desktop-header {
         display: none;
