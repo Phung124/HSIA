@@ -500,7 +500,11 @@ button:hover {
     input {
         
         margin: 5px 0;
+        width: 80%;
         
+    }
+    .verification-wraper{
+        width: 80%; 
     }
 }
 
