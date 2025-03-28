@@ -478,7 +478,7 @@ button:hover {
         order: 2; /* Đặt dưới ảnh header */
         top: auto !important;
         right: 0px !important;
-        margin: 0 10px 0px 5px;
+        margin: 0 0px 0px 5px;
         text-align: center;
     }
 
